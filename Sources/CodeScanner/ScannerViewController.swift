@@ -9,7 +9,7 @@
 import AVFoundation
 import UIKit
 
-@available(macCatalyst 14.0, *)
+@available(iOS 14.0, *)
 extension CodeScannerView {
     
     public class ScannerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureMetadataOutputObjectsDelegate, UIAdaptivePresentationControllerDelegate {
@@ -516,7 +516,7 @@ extension CodeScannerView {
     }
 }
 
-@available(macCatalyst 14.0, *)
+@available(iOS 14.0, *)
 extension CodeScannerView.ScannerViewController: AVCapturePhotoCaptureDelegate {
     
     public func photoOutput(
