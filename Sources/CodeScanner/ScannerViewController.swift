@@ -5,7 +5,7 @@
 //  Created by Paul Hudson on 14/12/2021.
 //  Copyright © 2021 Paul Hudson. All rights reserved.
 //
-
+#if !TARGET_OS_VISION
 import AVFoundation
 import UIKit
 
@@ -562,3 +562,4 @@ public extension AVCaptureDevice {
     }
     
 }
+#endif

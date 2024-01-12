@@ -6,8 +6,11 @@
 //  Copyright © 2021 Paul Hudson. All rights reserved.
 //
 
-import AVFoundation
 import SwiftUI
+
+#if !TARGET_OS_VISION
+
+import AVFoundation
 
 /// An enum describing the ways CodeScannerView can hit scanning problems.
 public enum ScanError: Error {
@@ -118,11 +121,17 @@ public struct CodeScannerView: UIViewControllerRepresentable {
     
 }
 
+#endif
+
 @available(macCatalyst 14.0, *)
 struct CodeScannerView_Previews: PreviewProvider {
     static var previews: some View {
+        #if !TARGET_OS_VISION
         CodeScannerView(codeTypes: [.qr]) { result in
             // do nothing
         }
+        #else
+        EmptyView()
+        #endif
     }
 }
